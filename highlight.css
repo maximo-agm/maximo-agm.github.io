@@ -1,14 +1,3 @@
-/* =========================================================================
-   Highlight — shared stylesheet
-   =========================================================================
-   Every changelog page links this file and then carries nothing but its own
-   content. To restyle all of them, edit here once.
-
-   A page opts into its browser's colours with a class on <body>:
-       <body class="theme-chrome">   or   <body class="theme-firefox">
-   Everything else is identical across pages by design.
-   ========================================================================= */
-
   :root {
     --bg: #101216; --panel: #1e2229; --panel-alt: #181b21; --border: #2a2f39;
     --text: #e8ecf1; --text-soft: #b7c0cc; --muted: #7b8494;
@@ -33,7 +22,7 @@
     display:flex; gap: 10px; align-items:flex-start; background: var(--panel-alt); border: 1px dashed var(--border);
     border-radius: var(--radius); padding: 14px 16px; margin-bottom: 32px; font-size: 13px; color: var(--muted);
   }
-  .lede { color: var(--text-soft); font-size: 15.5px; max-width: 720px; margin: 0 0 36px; }
+  .lede { color: var(--text-soft); font-size: 15.5px; margin: 0 0 36px; }
   .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 40px 0 16px; display:flex; align-items:center; gap:10px; }
   .section-title::after { content:""; flex:1; height:1px; background: var(--border); }
   .cat-title { font-size: 15px; font-weight: 700; margin: 24px 0 10px; color: var(--text); }
@@ -56,7 +45,7 @@
   .issue-status.investigating { background: var(--red-soft); color: var(--red); }
   .issue p { margin: 4px 0 0; color: var(--text-soft); font-size: 13.5px; }
   .placeholder-note { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 4px; }
-  /* ---- motion pass: subtle entrance + hover lift, applied site-wide ---- */
+  
   @keyframes hlxFadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   .wrap > * { animation: hlxFadeUp .5s ease both; }
   .wrap > *:nth-child(1) { animation-delay: 0s; }
@@ -80,19 +69,14 @@
   details:hover { border-color: var(--accent); }
   summary { transition: color .12s ease; }
 
-/* ── Release identity ─────────────────────────────────────────────────────
-   The chapter label and title that sit under the version number. */
-  /* Release identity: a chapter label and title sit under the version. */
+  
   .chapter-label {
     font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
     color: var(--muted); margin: 6px 0 2px;
   }
   .release-name { font-size: 19px; font-weight: 600; color: var(--accent); margin: 0 0 10px; letter-spacing: -0.01em; font-style: italic; }
-  .theme-line { color: var(--muted); font-size: 14px; margin: 0 0 26px; max-width: 720px; }
+  .theme-line { color: var(--muted); font-size: 14px; margin: 0 0 26px; }
 
-/* ── Permissions table ────────────────────────────────────────────────────
-   Only the v2.1.0 page uses this, but it costs nothing to carry and keeps
-   the "one stylesheet" rule intact. */
   .perm-table { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
   .perm-row {
     display:grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 8px; padding: 9px 12px;
@@ -106,18 +90,12 @@
   .perm-yes { color: var(--text-soft); }
   .perm-no { color: var(--green); font-weight: 600; }
 
-/* ── Category accent rail ─────────────────────────────────────────────────
-   Colour comes from the theme blocks below; the geometry is shared. */
 .cat-title { position: relative; padding-left: 14px; }
 .cat-title::before {
   content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
   width: 4px; height: 15px; border-radius: 2px;
 }
 
-/* ── Chrome ─────────────────────────────────────────────────────────────
-   The badges carry Chrome's own brand colours, so a glance at the page says
-   which browser it is before you read a word. Scoped to a body class, which is
-   the only per-page thing left in the HTML. */
 body.theme-chrome .status-pill { background: rgba(91,155,255,0.15); color: #5b9bff; border-color: rgba(91,155,255,0.38); }
 body.theme-chrome .release-name { color: #5b9bff; }
 body.theme-chrome .entry a, body.theme-chrome .callout a, body.theme-chrome .lede a, body.theme-chrome .theme-line a { color: #5b9bff; }
@@ -132,21 +110,30 @@ body.theme-chrome .cat-title.ct2::before    { background: #ff6f61; }
 body.theme-chrome .cat-title.ct3::before    { background: #fbbc04; }
 body.theme-chrome .cat-title.ct4::before    { background: #4dd07f; }
 
-
-/* ── Firefox ─────────────────────────────────────────────────────────────
-   The badges carry Firefox's own brand colours, so a glance at the page says
-   which browser it is before you read a word. Scoped to a body class, which is
-   the only per-page thing left in the HTML. */
-body.theme-firefox .status-pill { background: rgba(69,196,255,0.15); color: #45c4ff; border-color: rgba(69,196,255,0.38); }
-body.theme-firefox .release-name { color: #45c4ff; }
-body.theme-firefox .entry a, body.theme-firefox .callout a, body.theme-firefox .lede a, body.theme-firefox .theme-line a { color: #45c4ff; }
-body.theme-firefox .badge.feature     { background: rgba(69,196,255,0.15); color: #45c4ff; }
+body.theme-firefox .status-pill { background: rgba(255,144,87,0.15); color: #ff9057; border-color: rgba(255,144,87,0.38); }
+body.theme-firefox .release-name { color: #ff9057; }
+body.theme-firefox .entry a, body.theme-firefox .callout a, body.theme-firefox .lede a, body.theme-firefox .theme-line a { color: #ff9057; }
+body.theme-firefox .badge.feature     { background: rgba(255,144,87,0.15); color: #ff9057; }
 body.theme-firefox .badge.improvement { background: rgba(169,123,255,0.15); color: #a97bff; }
 body.theme-firefox .badge.change      { background: rgba(255,207,92,0.15); color: #ffcf5c; }
-body.theme-firefox .badge.fix         { background: rgba(255,138,92,0.15); color: #ff8a5c; }
-body.theme-firefox .entry:hover { border-color: rgba(69,196,255,0.38); }
-body.theme-firefox .callout { border-left-color: #45c4ff; }
-body.theme-firefox .cat-title::before        { background: #45c4ff; }
+body.theme-firefox .badge.fix         { background: rgba(255,107,107,0.15); color: #ff6b6b; }
+body.theme-firefox .entry:hover { border-color: rgba(255,144,87,0.38); }
+body.theme-firefox .callout { border-left-color: #ff9057; }
+body.theme-firefox .cat-title::before        { background: #ff9057; }
 body.theme-firefox .cat-title.ct2::before    { background: #a97bff; }
 body.theme-firefox .cat-title.ct3::before    { background: #ffcf5c; }
-body.theme-firefox .cat-title.ct4::before    { background: #ff8a5c; }
+body.theme-firefox .cat-title.ct4::before    { background: #ff6b6b; }
+
+body.theme-edge .status-pill { background: rgba(63,201,138,0.15); color: #3fc98a; border-color: rgba(63,201,138,0.38); }
+body.theme-edge .release-name { color: #3fc98a; }
+body.theme-edge .entry a, body.theme-edge .callout a, body.theme-edge .lede a, body.theme-edge .theme-line a { color: #3fc98a; }
+body.theme-edge .badge.feature     { background: rgba(63,201,138,0.15); color: #3fc98a; }
+body.theme-edge .badge.improvement { background: rgba(72,169,248,0.15); color: #48a9f8; }
+body.theme-edge .badge.change      { background: rgba(242,193,78,0.15); color: #f2c14e; }
+body.theme-edge .badge.fix         { background: rgba(255,127,107,0.15); color: #ff7f6b; }
+body.theme-edge .entry:hover { border-color: rgba(63,201,138,0.38); }
+body.theme-edge .callout { border-left-color: #3fc98a; }
+body.theme-edge .cat-title::before        { background: #3fc98a; }
+body.theme-edge .cat-title.ct2::before    { background: #48a9f8; }
+body.theme-edge .cat-title.ct3::before    { background: #f2c14e; }
+body.theme-edge .cat-title.ct4::before    { background: #ff7f6b; }
