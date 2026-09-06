@@ -11,13 +11,12 @@ body.theme-firefox{--tc:#FF9E7A;--tc2:#FFC7AC;}
 
 .intro{margin-top:20px;font-size:15px;color:var(--mute);line-height:1.75;max-width:860px;}
 
-.callout{margin-top:20px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.callout{margin-top:20px;padding:18px 0;border-top:1px solid var(--line);}
 .callout p{margin:0;font-size:14px;color:var(--body);line-height:1.6;}
 .callout a{color:var(--tc);font-weight:600;}
 .callout a:hover{text-decoration:underline;}
 
-.chapter{margin-top:clamp(20px,2.5vw,32px);padding-top:clamp(18px,2.2vw,26px);border-top:1px solid var(--line);}
-.chapter:first-of-type{margin-top:clamp(16px,2vw,24px);}
+.chapter{margin-top:clamp(28px,3vw,40px);}
 .chapter-top{display:flex;align-items:flex-start;gap:26px;flex-wrap:wrap;margin-bottom:22px;}
 .chapter-num{font-family:var(--orb);font-weight:900;font-variant-numeric:tabular-nums;font-size:clamp(46px,6.4vw,82px);line-height:1;color:var(--tc);counter-reset:n var(--n);}
 .chapter-num::after{content:counter(n,decimal-leading-zero);}
