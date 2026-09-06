@@ -69,3 +69,6 @@ body.theme-firefox{--tc:#FF9E7A;--tc2:#FFC7AC;}
 .navgroup:not(:last-child){border-bottom:1px solid var(--line-soft);margin-bottom:6px;}
 .navgroup-label{display:flex;align-items:center;gap:9px;padding:8px 12px 4px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--body);}
 .navmenu a.navsub{padding-left:30px;font-size:12px;}
+
+.cta{margin-top:40px;padding-top:28px;}
+footer{margin-top:32px;padding-top:18px;}
