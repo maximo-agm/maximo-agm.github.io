@@ -72,3 +72,5 @@ body.theme-firefox{--tc:#FF9E7A;--tc2:#FFC7AC;}
 
 .cta{margin-top:40px;padding-top:28px;}
 footer{margin-top:32px;padding-top:18px;}
+
+.navsub-disabled{color:var(--dim);cursor:default;}
