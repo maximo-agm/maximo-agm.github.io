@@ -1,0 +1,23 @@
+body.theme-regex .chapter:nth-of-type(3n+2) .chapter-num{color:#6FA8FF;}
+body.theme-regex .chapter:nth-of-type(3n+2) .tag-label{color:#6FA8FF;}
+body.theme-regex .chapter:nth-of-type(3n+2) mark{background:#6FA8FF;}
+body.theme-regex .chapter:nth-of-type(3n+2) .chapter-lede a,
+body.theme-regex .chapter:nth-of-type(3n+2) .legal-list a{color:#6FA8FF;}
+body.theme-regex .chapter:nth-of-type(3n+2) .stepline-n{color:#6FA8FF;}
+body.theme-regex .chapter:nth-of-type(3n+2) .pat code,
+body.theme-regex .chapter:nth-of-type(3n+2) .recipe-pat code{color:#6FA8FF;}
+
+body.theme-regex .chapter:nth-of-type(3n) .chapter-num{color:#3FC98A;}
+body.theme-regex .chapter:nth-of-type(3n) .tag-label{color:#3FC98A;}
+body.theme-regex .chapter:nth-of-type(3n) mark{background:#3FC98A;}
+body.theme-regex .chapter:nth-of-type(3n) .chapter-lede a,
+body.theme-regex .chapter:nth-of-type(3n) .legal-list a{color:#3FC98A;}
+body.theme-regex .chapter:nth-of-type(3n) .stepline-n{color:#3FC98A;}
+body.theme-regex .chapter:nth-of-type(3n) .pat code,
+body.theme-regex .chapter:nth-of-type(3n) .recipe-pat code{color:#3FC98A;}
+
+body.theme-regex .toc a:nth-of-type(3n+2):hover{color:#6FA8FF;}
+body.theme-regex .toc a:nth-of-type(3n):hover{color:#3FC98A;}
+
+body.theme-regex .ghost{background:linear-gradient(160deg,#FFDD73,#6FA8FF 55%,#3FC98A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;opacity:.09;}
+body.theme-regex .mark-fill{background:linear-gradient(90deg,#FFDD73,#6FA8FF);}
