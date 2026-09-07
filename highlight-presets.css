@@ -1,0 +1,35 @@
+body.theme-presets,body.theme-presets .stage{transition:background-color .7s ease;}
+body.theme-presets{transition:color .7s ease;}
+.ghost,.kicker,.mark-fill{transition:color .7s ease,background .7s ease;}
+
+.featured-item{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease;position:relative;}
+.featured-item:hover{transform:translateY(-3px);}
+.featured-item.active-preview{transform:scale(1.025);box-shadow:0 20px 46px rgba(0,0,0,.4);}
+.featured-item.active-preview::after{content:"";position:absolute;inset:0;border:2px solid currentColor;opacity:.35;border-radius:inherit;pointer-events:none;}
+
+.auto-progress{height:2px;background:var(--line-soft);margin-top:14px;overflow:hidden;border-radius:2px;}
+.auto-progress-bar{height:100%;width:0%;background:var(--tc);transition:background-color .5s ease;}
+.auto-progress-bar.running{animation:hlxAutoFill 4.6s linear forwards;}
+.auto-progress-bar.paused{animation-play-state:paused;}
+@keyframes hlxAutoFill{from{width:0%;}to{width:100%;}}
+
+.pitem-row{position:relative;}
+.pitem-row.active-preview{background:rgba(255,255,255,.035);}
+.pitem-row.active-preview .pswatch{box-shadow:0 0 0 2px var(--tc);}
+.pitem-row.active-preview::before{content:"";position:absolute;left:-18px;top:50%;width:6px;height:6px;
+  border-radius:50%;background:var(--tc);transform:translateY(-50%);
+  box-shadow:0 0 0 4px color-mix(in oklch,var(--tc) 25%,transparent);}
+@media(max-width:760px){.pitem-row.active-preview::before{display:none;}}
+
+.preview-banner{transition:border-color .5s ease;}
+.preview-name-live{position:relative;padding-left:14px;}
+.preview-name-live::before{content:"";position:absolute;left:0;top:50%;width:7px;height:7px;border-radius:50%;
+  background:var(--tc);transform:translateY(-50%);animation:hlxLivePulse 1.8s ease-in-out infinite;}
+@keyframes hlxLivePulse{0%,100%{opacity:1;box-shadow:0 0 0 0 color-mix(in oklch,var(--tc) 45%,transparent);}
+  50%{opacity:.6;box-shadow:0 0 0 5px color-mix(in oklch,var(--tc) 0%,transparent);}}
+
+@media (prefers-reduced-motion: reduce){
+  .auto-progress{display:none;}
+  .preview-name-live::before{animation:none;}
+  .featured-item,.featured-item.active-preview{transition:none;transform:none;}
+}

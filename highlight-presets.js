@@ -106,10 +106,20 @@ var HLX_FEATURED_DESC = {
   }
   function hlxStopAuto() {
     if (hlxAutoTimer) { clearInterval(hlxAutoTimer); hlxAutoTimer = null; }
+    var bar = document.getElementById('auto-progress-bar');
+    if (bar) { bar.classList.remove('running'); bar.classList.add('paused'); }
+  }
+  function hlxRestartProgress() {
+    var bar = document.getElementById('auto-progress-bar');
+    if (!bar) return;
+    bar.classList.remove('running', 'paused');
+    void bar.offsetWidth;
+    bar.classList.add('running');
   }
   function hlxAutoAdvance() {
     hlxAutoIndex = (hlxAutoIndex + 1) % HLX_FEATURED_NAMES.length;
     hlxPreviewPresetInner(hlxFindPresetIdByName(HLX_FEATURED_NAMES[hlxAutoIndex]));
+    hlxRestartProgress();
   }
   function hlxStartAuto() {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
