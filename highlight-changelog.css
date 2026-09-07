@@ -2,8 +2,6 @@ body.theme-chrome{--tc:#6FA8FF;--tc2:#A9CBFF;}
 body.theme-edge{--tc:#3FC98A;--tc2:#98E6C0;}
 body.theme-firefox{--tc:#FF9E7A;--tc2:#FFC7AC;}
 
-.inner{max-width:1400px;margin:0 auto;}
-
 .ghost{color:var(--tc);}
 .glow{background:radial-gradient(closest-side,color-mix(in oklch,var(--tc) 32%,transparent),transparent 70%);}
 .kicker{color:var(--tc);}
