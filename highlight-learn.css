@@ -1,7 +1,9 @@
 body.theme-faq{--tc:#3FC98A;--tc2:#98E6C0;}
 body.theme-presets{--tc:#6FA8FF;--tc2:#A9CBFF;}
 body.theme-regex{--tc:#FFDD73;--tc2:#FFEEB0;}
-body.theme-faq .chapter-num,body.theme-presets .chapter-num,body.theme-regex .chapter-num{animation:none !important;--n:var(--to) !important;}
+body.theme-start{--tc:#FF9E7A;--tc2:#FFC7AC;}
+body.theme-tour{--tc:#FF8FA8;--tc2:#FFC2D1;}
+body.theme-faq .chapter-num,body.theme-presets .chapter-num,body.theme-regex .chapter-num,body.theme-start .chapter-num,body.theme-tour .chapter-num{animation:none !important;--n:var(--to) !important;}
 
 code{background:rgba(255,255,255,.05);border:1px solid var(--line-soft);border-radius:4px;padding:.1em .42em;}
 mark{background:var(--tc);color:#0A0E14;font-weight:600;padding:.1em .3em;border-radius:3px;}
