@@ -5,7 +5,7 @@ body.theme-firefox{--tc:#FF9E7A;--tc2:#FFC7AC;}
 .ghost{color:var(--tc);}
 .glow{background:radial-gradient(closest-side,color-mix(in oklch,var(--tc) 32%,transparent),transparent 70%);}
 .kicker{color:var(--tc);}
-.mark-fill{background:linear-gradient(90deg,var(--tc),var(--tc2));}
+body[class*="theme-"] .mark-fill{background:linear-gradient(90deg,var(--tc),var(--tc2));}
 
 .intro{margin-top:20px;font-size:15px;color:var(--mute);line-height:1.75;max-width:none;}
 
