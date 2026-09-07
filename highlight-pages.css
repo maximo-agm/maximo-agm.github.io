@@ -1,6 +1,7 @@
 body.theme-about{--tc:#FF9E7A;--tc2:#FF8FA8;}
 body.theme-legal{--tc:#FFDD73;--tc2:#FFEEB0;}
 body.theme-legal .chapter-num{animation:none !important;--n:var(--to) !important;}
+body.theme-about .chapter-num{animation:none !important;--n:var(--to) !important;}
 
 .chapter-lede,.chapter-line,.feat-body,.issue-body,.ch-body,.srow-body,.step-body,.intro{max-width:none;}
 

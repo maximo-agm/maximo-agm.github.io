@@ -1,12 +1,13 @@
 body.theme-faq{--tc:#3FC98A;--tc2:#98E6C0;}
 body.theme-presets{--tc:#6FA8FF;--tc2:#A9CBFF;}
 body.theme-regex{--tc:#FFDD73;--tc2:#FFEEB0;}
+body.theme-faq .chapter-num,body.theme-presets .chapter-num,body.theme-regex .chapter-num{animation:none !important;--n:var(--to) !important;}
 
 code{background:rgba(255,255,255,.05);border:1px solid var(--line-soft);border-radius:4px;padding:.1em .42em;}
 mark{background:var(--tc);color:#0A0E14;font-weight:600;padding:.1em .3em;border-radius:3px;}
 
-.callout-warn{border-top-color:#FFDD73;}
-.callout-warn .tag-label{color:#FFDD73;}
+.callout-warn{border-top-color:#6FA8FF;}
+.callout-warn .tag-label{color:#6FA8FF;}
 .callout-good{border-top-color:#3FC98A;}
 .callout-good .tag-label{color:#3FC98A;}
 
@@ -25,7 +26,8 @@ mark{background:var(--tc);color:#0A0E14;font-weight:600;padding:.1em .3em;border
 .qtag-updated{color:var(--dim);}
 
 .pitem-cat{margin-top:0;}
-.pitem-row{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid var(--line-soft);cursor:pointer;}
+.pitem-row{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid var(--line-soft);cursor:pointer;transition:padding-left .2s ease;}
+.pitem-row:hover{padding-left:10px;}
 .pitem-row.active-preview{border-color:var(--tc);}
 .pitem-row.active-preview .pitem-name{color:var(--tc);}
 .pitem-cat>.pitem-row:last-child{border-bottom:none;}
@@ -65,9 +67,12 @@ mark{background:var(--tc);color:#0A0E14;font-weight:600;padding:.1em .3em;border
 .tbl th{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:700;white-space:nowrap;}
 .tbl td.pat code{color:var(--tc);white-space:nowrap;}
 
-.recipes{margin-top:8px;}
+.recipes{margin-top:8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0 44px;}
 .recipe{padding:20px 0;border-bottom:1px solid var(--line-soft);}
-.recipes>.recipe:last-child{border-bottom:none;}
+.recipe:nth-child(3n+2) .recipe-pat code{color:#6FA8FF;}
+.recipe:nth-child(3n+2) mark{background:#6FA8FF;}
+.recipe:nth-child(3n) .recipe-pat code{color:#3FC98A;}
+.recipe:nth-child(3n) mark{background:#3FC98A;}
 .recipe-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:10px;}
 .recipe-name{font-family:var(--orb);font-weight:700;font-size:16px;}
 .recipe-tag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);}
