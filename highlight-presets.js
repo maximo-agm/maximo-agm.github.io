@@ -15,18 +15,37 @@ var HLX_FEATURED_DESC = {
   function hlxCheckIcon() {
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
   }
-  function hlxCopyPlainText(text) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text);
-      return true;
-    }
+  function hlxWarnIcon() {
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>';
+  }
+  function hlxCopyExecCommand(text) {
     var ta = document.createElement('textarea');
-    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0'; ta.style.top = '0'; ta.style.left = '0';
     document.body.appendChild(ta); ta.focus(); ta.select();
     var done = false;
     try { done = document.execCommand('copy'); } catch (e) { done = false; }
     document.body.removeChild(ta);
     return done;
+  }
+  function hlxManualCopyPanel() {
+    var panel = document.getElementById('hlx-manual-copy');
+    if (panel) return panel;
+    panel = document.createElement('div');
+    panel.id = 'hlx-manual-copy';
+    panel.className = 'hlx-manual-copy';
+    panel.innerHTML = '<div class="hlx-manual-copy-label">This page can&rsquo;t reach the clipboard here &mdash; select the code and press Ctrl+C</div><input type="text" class="hlx-manual-copy-input" readonly /><button type="button" class="hlx-manual-copy-close" aria-label="Close">&times;</button>';
+    document.body.appendChild(panel);
+    panel.querySelector('.hlx-manual-copy-close').addEventListener('click', function () { panel.classList.remove('visible'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') panel.classList.remove('visible'); });
+    return panel;
+  }
+  function hlxShowManualCopy(text) {
+    var panel = hlxManualCopyPanel();
+    var input = panel.querySelector('.hlx-manual-copy-input');
+    input.value = text;
+    panel.classList.add('visible');
+    input.focus();
+    input.select();
   }
   function hlxFindPreset(id) {
     var parts = id.split('_');
@@ -40,11 +59,36 @@ var HLX_FEATURED_DESC = {
     return null;
   }
   function hlxCopyPreset(id, btn) {
-    hlxCopyPlainText(hlxFindPreset(id).share);
+    var text = hlxFindPreset(id).share;
     var original = btn.innerHTML;
-    btn.innerHTML = hlxCheckIcon();
-    btn.classList.add('copied');
-    setTimeout(function () { btn.innerHTML = original; btn.classList.remove('copied'); }, 1400);
+    var resolved = false;
+    function showSuccess() {
+      if (resolved) return;
+      resolved = true;
+      btn.innerHTML = hlxCheckIcon();
+      btn.classList.remove('copy-failed');
+      btn.classList.add('copied');
+      setTimeout(function () { btn.innerHTML = original; btn.classList.remove('copied'); }, 1400);
+    }
+    function showFailure() {
+      if (resolved) return;
+      resolved = true;
+      btn.innerHTML = hlxWarnIcon();
+      btn.classList.add('copy-failed');
+      hlxShowManualCopy(text);
+      setTimeout(function () { btn.innerHTML = original; btn.classList.remove('copy-failed'); }, 2200);
+    }
+    var execOk = hlxCopyExecCommand(text);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        if (!execOk) showSuccess();
+      }, function () {
+        if (!execOk) showFailure();
+      });
+    } else if (!execOk) {
+      showFailure();
+    }
+    if (execOk) showSuccess();
   }
   function hlxRenderGallery() {
     var mount = document.getElementById('preset-gallery');
