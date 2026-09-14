@@ -35,8 +35,8 @@ body[class*="theme-"] .mark-fill{background:linear-gradient(90deg,var(--tc),var(
 .group>.feat:last-child{border-bottom:none;}
 .feat-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
 .feat-tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--tc);text-transform:uppercase;opacity:.9;flex:0 0 auto;}
-.feat-tag-improvement{color:var(--body);}
-.feat-tag-change{color:var(--mute);}
+.feat-tag-improvement{color:var(--mint);}
+.feat-tag-change{color:var(--pink);}
 .feat-tag-fix{color:var(--gold);}
 .feat-title{font-family:var(--orb);font-weight:700;font-size:16px;}
 .feat-body{margin:8px 0 0;font-size:14px;color:var(--mute);line-height:1.65;max-width:none;}
