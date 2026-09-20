@@ -28,6 +28,9 @@ body.theme-presets{transition:color .7s ease;}
 @keyframes hlxLivePulse{0%,100%{opacity:1;box-shadow:0 0 0 0 color-mix(in oklch,var(--tc) 45%,transparent);}
   50%{opacity:.6;box-shadow:0 0 0 5px color-mix(in oklch,var(--tc) 0%,transparent);}}
 
+.pitem-builtin,.featured-builtin{display:inline-block;margin-left:10px;padding:2px 8px;font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--tc);color:var(--tc);border-radius:3px;vertical-align:middle;}
+.chapter-note{font-family:var(--mono);font-size:12px;color:var(--dim);margin-top:4px;}
+
 .pcopy.copy-failed{border-color:var(--gold);color:var(--gold);}
 .featured-copy.copy-failed{border-color:var(--gold);color:var(--gold);}
 
