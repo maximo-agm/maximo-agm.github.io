@@ -16,11 +16,8 @@ body[class*="theme-"] .mark-fill{background:linear-gradient(90deg,var(--tc),var(
 
 .chapter{margin-top:clamp(28px,3vw,40px);}
 .chapter-top{display:flex;align-items:flex-start;gap:26px;flex-wrap:wrap;margin-bottom:22px;}
-.chapter-num{font-family:var(--orb);font-weight:900;font-variant-numeric:tabular-nums;font-size:clamp(46px,6.4vw,82px);line-height:1;color:var(--tc);counter-reset:n var(--n);}
+.chapter-num{font-family:var(--orb);font-weight:900;font-variant-numeric:tabular-nums;font-size:clamp(46px,6.4vw,82px);line-height:1;color:var(--tc);--n:var(--to);counter-reset:n var(--n);}
 .chapter-num::after{content:counter(n,decimal-leading-zero);}
-@supports (animation-timeline: view()){
-  .chapter-num{--n:0;animation:hlxCount 1.4s linear both;animation-timeline:view();animation-range:entry 12% cover 34%;}
-}
 .chapter-num-group{display:flex;align-items:baseline;gap:8px;}
 .chapter-num-plus{font-family:var(--orb);font-weight:900;font-size:28px;color:var(--dim);}
 .chapter-meta{padding-top:10px;}
@@ -38,7 +35,7 @@ body[class*="theme-"] .mark-fill{background:linear-gradient(90deg,var(--tc),var(
 .feat-tag-improvement{color:var(--tc2);}
 .feat-tag-change{color:var(--pink);}
 .feat-tag-fix{color:var(--gold);}
-.feat-title{font-family:var(--orb);font-weight:700;font-size:16px;}
+.feat-title{font-family:var(--sans);font-weight:600;font-size:16px;}
 .feat-body{margin:8px 0 0;font-size:14px;color:var(--mute);line-height:1.65;max-width:none;}
 .feat-body code{font-family:var(--mono);font-size:12px;color:var(--body);}
 .feat-body em{color:var(--body);font-style:normal;}
@@ -57,7 +54,7 @@ body[class*="theme-"] .mark-fill{background:linear-gradient(90deg,var(--tc),var(
 .issue{padding:18px 0;border-bottom:1px solid var(--line-soft);}
 .issues>.issue:last-child{border-bottom:none;}
 .issue-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;}
-.issue-title{font-family:var(--orb);font-weight:700;font-size:15px;}
+.issue-title{font-family:var(--sans);font-weight:600;font-size:15px;}
 .issue-status{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--gold);opacity:.9;text-transform:uppercase;flex:0 0 auto;}
 .issue-body{margin:8px 0 0;font-size:14px;color:var(--mute);line-height:1.65;max-width:none;}
 .issue-empty{font-family:var(--mono);font-size:13px;color:var(--dim);margin-top:22px;}
