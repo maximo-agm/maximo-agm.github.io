@@ -54,16 +54,46 @@
     });
   }
 
-  setupInstall();
-  setupToggles();
-
   var reduce=false;
   try{reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+
+  function setupToc(){
+    [].forEach.call(document.querySelectorAll('.toc a[href^="#"]'),function(a){
+      a.addEventListener('click',function(e){
+        var target=document.getElementById(a.getAttribute('href').slice(1));
+        if(!target)return;
+        e.preventDefault();
+        target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+      });
+    });
+  }
+
+  setupInstall();
+  setupToggles();
+  setupToc();
+
   if(reduce||!('IntersectionObserver' in window))return;
 
   document.documentElement.classList.add('hlx-armed');
 
-  var SEL='[data-reveal],.ch-num,.chapter-num';
+  [].forEach.call(document.querySelectorAll('.kicker'),function(k){
+    k.style.setProperty('--chars',Math.max(1,k.textContent.length));
+    k.classList.add('is-typing');
+  });
+
+  [].forEach.call(document.querySelectorAll('.h1-a'),function(h){
+    var text=h.textContent;
+    for(var i=0;i<2;i++){
+      var s=document.createElement('span');
+      s.className='glx';
+      s.setAttribute('aria-hidden','true');
+      s.textContent=text;
+      h.appendChild(s);
+    }
+    h.classList.add('is-glitch');
+  });
+
+  var SEL='[data-reveal],.ch-num,.chapter-num,.srule,.next,.rail,.demo,.ident,.toc,.form-embed,.chapter-top';
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){
       if(!e.isIntersecting)return;

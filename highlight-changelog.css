@@ -65,7 +65,15 @@ body[class*="theme-"] .mark-fill{background:linear-gradient(90deg,var(--tc),var(
 .navgroup-label{display:flex;align-items:center;gap:9px;padding:8px 12px 4px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--body);}
 .navmenu a.navsub,.navsub{padding-left:30px;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px;}
 
+body.theme-chrome .h1-a,body.theme-edge .h1-a,body.theme-firefox .h1-a{font-size:clamp(15px,2vw,22px);letter-spacing:.22em;line-height:1.2;color:var(--tc);margin-bottom:16px;}
+body.theme-chrome .h1-b,body.theme-edge .h1-b,body.theme-firefox .h1-b{margin-top:0;}
+:is(.theme-chrome,.theme-edge,.theme-firefox) .inner>.chapter>.chapter-top{align-items:center;padding:20px 24px;margin:8px 0 26px;border:1px solid var(--line);background:var(--panel);}
+:is(.theme-chrome,.theme-edge,.theme-firefox) .inner>.chapter>.chapter-top .chapter-meta{padding-top:0;}
+:is(.theme-chrome,.theme-edge,.theme-firefox) .inner>.chapter>.chapter-top::after{content:"HIGHLIGHT // RELEASE LOG";content:"HIGHLIGHT // RELEASE LOG" / "";position:absolute;right:16px;top:-6px;padding:0 8px;line-height:1;
+  background:var(--bg);font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:var(--dim);}
+
 .cta{margin-top:40px;padding-top:28px;}
+.next{margin-top:40px;padding-top:28px;}
 footer{margin-top:32px;padding-top:18px;}
 
 .navsub-disabled{color:var(--dim);cursor:default;}
