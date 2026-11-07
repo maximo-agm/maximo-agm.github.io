@@ -2,9 +2,7 @@
    Every page has <div class="nav" data-hlx-nav></div> followed by this script.
    To change the menu on every page at once, edit MENU below and push.
    A page can mark its own entry with data-current="home|ideas", which shows
-   that entry as plain text instead of a link.
-   CHROME STAYS AT 2.1.0: never add a Chrome entry above 2.1.0 here until the
-   owner says so (see docs/Website Tree.txt). */
+   that entry as plain text instead of a link. */
 (function(){
   var BASE='https://sites.google.com/view/highlight-mxm/';
 
@@ -20,14 +18,22 @@
     {label:'CHANGELOG',wide:true,groups:[
       {label:'Chrome',tc:'t-chrome',items:[
         {label:'v2.1.0 — The Release',href:'changelogs/chrome-changelogs/210Chrome-A7K29Xm4'},
-        {label:'Updates are planned'}
+        {label:'v2.2.0 — The Character of a Word',href:'changelogs/chrome-changelogs/220Chrome-Hs6Nq2Vd'},
+        {label:'v2.3.0 — The Shape of the Unwritten',href:'changelogs/chrome-changelogs/230Chrome-tN8fG3mX'},
+        {label:'v2.3.1 — The Weight of a Presence',href:'changelogs/chrome-changelogs/231Chrome-shtmmtrr'},
+        {label:'v2.3.2 — The Weave of a Style',href:'changelogs/chrome-changelogs/232Chrome-0ZDIekxU'},
+        {label:'v2.3.3 — The Pitch of a Sound',href:'changelogs/chrome-changelogs/233Chrome-Yb4Mk7Rt'},
+        {label:'v2.3.4 — The Pulse of a Change',href:'changelogs/chrome-changelogs/234Chrome-ge98ipEU'},
+        {label:'v2.4.0 — The Colour of a Moment',href:'changelogs/chrome-changelogs/240Chrome-XxetxaRl'},
+        {label:'v2.4.1 — The Stroke of a Word',href:'changelogs/chrome-changelogs/241Chrome-Wqc6WhuR'}
       ]},
       {label:'Edge',tc:'t-edge',items:[
         {label:'v2.3.1 — The Weight of a Presence',href:'changelogs/edge-changelogs/231Edge-EsufWHwz'},
         {label:'v2.3.2 — The Weave of a Style',href:'changelogs/edge-changelogs/232Edge-pc73FLTV'},
         {label:'v2.3.3 — The Pitch of a Sound',href:'changelogs/edge-changelogs/233Edge-Dq2Vn8Lw'},
         {label:'v2.3.4 — The Pulse of a Change',href:'changelogs/edge-changelogs/234Edge-yAa5h3j5'},
-        {label:'v2.4.0 — The Colour of a Moment',href:'changelogs/edge-changelogs/240Edge-Vb4bFpIu'}
+        {label:'v2.4.0 — The Colour of a Moment',href:'changelogs/edge-changelogs/240Edge-Vb4bFpIu'},
+        {label:'v2.4.1 — The Stroke of a Word',href:'changelogs/edge-changelogs/241Edge-kimVrxWV'}
       ]},
       {label:'Firefox',tc:'t-firefox',items:[
         {label:'v2.3.0 — The Shape of the Unwritten',href:'changelogs/firefox-changelogs/230Firefox-F4h6T2z9'},
@@ -35,7 +41,8 @@
         {label:'v2.3.2 — The Weave of a Style',href:'changelogs/firefox-changelogs/232Firefox-hOVRhSBP'},
         {label:'v2.3.3 — The Pitch of a Sound',href:'changelogs/firefox-changelogs/233Firefox-Xs5Tc3Hb'},
         {label:'v2.3.4 — The Pulse of a Change',href:'changelogs/firefox-changelogs/234Firefox-yedkCB5l'},
-        {label:'v2.4.0 — The Colour of a Moment',href:'changelogs/firefox-changelogs/240Firefox-L8AC5DJ8'}
+        {label:'v2.4.0 — The Colour of a Moment',href:'changelogs/firefox-changelogs/240Firefox-L8AC5DJ8'},
+        {label:'v2.4.1 — The Stroke of a Word',href:'changelogs/firefox-changelogs/241Firefox-A4UnIWts'}
       ]}
     ]},
     {key:'ideas',label:'IDEAS & FEEDBACK',href:'ideas-and-feedback'}

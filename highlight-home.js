@@ -1,46 +1,4 @@
 (function(){
-  var stores={
-    chrome:{name:'Chrome',tc:'t-chrome',href:'https://chromewebstore.google.com/detail/highlight/fifamngjkcdgdcomgdjjegepgnhdjcif'},
-    edge:{name:'Edge',tc:'t-edge',href:'https://microsoftedge.microsoft.com/addons/detail/gbhmmddcommimmoioggbgchckfjkkhfe'},
-    firefox:{name:'Firefox',tc:'t-firefox',href:'https://addons.mozilla.org/en-US/firefox/addon/highlight_mxm/'}
-  };
-  var order=['firefox','chrome','edge'];
-
-  function detect(){
-    var ua=navigator.userAgent||'';
-    if(ua.indexOf('Edg/')>-1)return 'edge';
-    if(ua.indexOf('Firefox')>-1)return 'firefox';
-    if(ua.indexOf('Chrome')>-1)return 'chrome';
-    return 'firefox';
-  }
-
-  function link(key,cls,text){
-    var a=document.createElement('a');
-    if(cls)a.className=cls;
-    a.href=stores[key].href;
-    a.target='_blank';
-    a.rel='noopener';
-    a.textContent=text;
-    return a;
-  }
-
-  function setupInstall(){
-    var btn=document.querySelector('.install-btn');
-    var alt=document.querySelector('.install-alt');
-    if(!btn||!alt)return;
-    var key=detect();
-    var s=stores[key];
-    btn.className='install-btn '+s.tc;
-    btn.href=s.href;
-    btn.textContent='Add to '+s.name;
-    while(alt.firstChild)alt.removeChild(alt.firstChild);
-    alt.appendChild(document.createTextNode('Also on '));
-    order.filter(function(k){return k!==key;}).forEach(function(k,i){
-      if(i)alt.appendChild(document.createTextNode(' · '));
-      alt.appendChild(link(k,'',stores[k].name));
-    });
-  }
-
   function setupToggles(){
     [].forEach.call(document.querySelectorAll('.ch-toggle'),function(btn){
       btn.addEventListener('click',function(){
@@ -68,7 +26,6 @@
     });
   }
 
-  setupInstall();
   setupToggles();
   setupToc();
 
@@ -93,7 +50,7 @@
     h.classList.add('is-glitch');
   });
 
-  var SEL='[data-reveal],.ch-num,.chapter-num,.srule,.next,.rail,.demo,.ident,.toc,.form-embed,.chapter-top';
+  var SEL='[data-reveal],.ch-num,.chapter-num,.srule,.next,.rail,.ident,.toc,.form-embed,.chapter-top';
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){
       if(!e.isIntersecting)return;
@@ -143,27 +100,4 @@
       });
     }).observe(document.body,{childList:true,subtree:true});
   }
-
-  [].forEach.call(document.querySelectorAll('.demo'),function(demo){
-    var words=[].slice.call(demo.querySelectorAll('.dm'));
-    if(!words.length)return;
-    demo.classList.add('is-live');
-    var step=0,timer=null,visible=false;
-    function tick(){
-      if(!visible){timer=null;return;}
-      if(step<words.length){
-        words[step].classList.add('on');
-        step++;
-        timer=setTimeout(tick,step<words.length?650:2000);
-      }else{
-        words.forEach(function(w){w.classList.remove('on');});
-        step=0;
-        timer=setTimeout(tick,900);
-      }
-    }
-    new IntersectionObserver(function(es){
-      visible=es[es.length-1].isIntersecting;
-      if(visible&&!timer)timer=setTimeout(tick,400);
-    },{threshold:.4}).observe(demo);
-  });
 })();
