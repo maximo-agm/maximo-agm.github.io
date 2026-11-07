@@ -1,11 +1,11 @@
-body.theme-feedback{--tc:#FF8FA8;--tc2:#FFC7AC;}
+body.theme-feedback{--tc:#B98CFF;--tc2:#E2C6FF;--tcd:#8E5CFF;}
 
 .promises{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--mute);}
-.promise{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;}
-.promise .dot{width:6px;height:6px;border-radius:50%;background:var(--tc);flex:0 0 6px;}
+.promise{display:flex;align-items:center;gap:10px;border:1px solid color-mix(in srgb,var(--tc) 22%,transparent);border-radius:999px;padding:6px 14px;}
+.promise .dot{width:6px;height:6px;border-radius:50%;background:var(--tc);flex:0 0 6px;box-shadow:0 0 8px var(--tc);}
 
 .steps{display:flex;flex-direction:column;}
-.step{display:flex;align-items:baseline;gap:clamp(16px,3vw,32px);padding:24px 0;border-bottom:1px solid var(--line-soft);}
+.step{display:flex;align-items:baseline;gap:clamp(16px,3vw,32px);padding:24px 0;border-bottom:1px solid color-mix(in srgb,var(--tc) 10%,transparent);}
 .steps>.step:last-child{border-bottom:none;}
 .step-n{font-family:var(--orb);font-weight:900;font-size:clamp(24px,2.8vw,34px);color:var(--tc);opacity:.4;width:60px;flex:0 0 60px;}
 .step-label{font-family:var(--sans);font-weight:600;font-size:clamp(17px,1.9vw,22px);width:240px;flex:0 0 240px;}
@@ -15,7 +15,7 @@ body.theme-feedback{--tc:#FF8FA8;--tc2:#FFC7AC;}
 .form-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px;}
 .form-head h3{margin:0;font-family:var(--sans);font-weight:600;font-size:18px;}
 .form-head .hint{font-family:var(--mono);font-size:12px;color:var(--dim);}
-.form-embed{border:1px solid var(--line);background:#0e0f14;}
+.form-embed{background:#0e0f14;border-radius:3px;border:1px solid color-mix(in srgb,var(--tc) 16%,transparent);box-shadow:0 0 18px -12px color-mix(in srgb,var(--tc) 30%,transparent),inset 0 1px 0 color-mix(in srgb,var(--tc) 7%,transparent);}
 .form-embed iframe{display:block;width:100%;height:780px;border:none;}
 
 .empty-note{font-family:var(--mono);font-size:13px;color:var(--dim);padding:22px 0 0;border-top:1px dashed var(--line);margin-top:4px;}

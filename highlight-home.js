@@ -50,7 +50,7 @@
     h.classList.add('is-glitch');
   });
 
-  var SEL='[data-reveal],.ch-num,.chapter-num,.srule,.next,.rail,.ident,.toc,.form-embed,.chapter-top';
+  var SEL='[data-reveal],h1,.ch-num,.chapter-num,.srule,.next,.rail,.ident,.toc,.form-embed,.chapter-top';
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){
       if(!e.isIntersecting)return;
