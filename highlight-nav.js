@@ -18,13 +18,6 @@
     {label:'CHANGELOG',wide:true,groups:[
       {label:'Chrome',tc:'t-chrome',items:[
         {label:'v2.1.0 — The Release',href:'changelogs/chrome-changelogs/210Chrome-A7K29Xm4'},
-        {label:'v2.2.0 — The Character of a Word',href:'changelogs/chrome-changelogs/220Chrome-Hs6Nq2Vd'},
-        {label:'v2.3.0 — The Shape of the Unwritten',href:'changelogs/chrome-changelogs/230Chrome-tN8fG3mX'},
-        {label:'v2.3.1 — The Weight of a Presence',href:'changelogs/chrome-changelogs/231Chrome-shtmmtrr'},
-        {label:'v2.3.2 — The Weave of a Style',href:'changelogs/chrome-changelogs/232Chrome-0ZDIekxU'},
-        {label:'v2.3.3 — The Pitch of a Sound',href:'changelogs/chrome-changelogs/233Chrome-Yb4Mk7Rt'},
-        {label:'v2.3.4 — The Pulse of a Change',href:'changelogs/chrome-changelogs/234Chrome-ge98ipEU'},
-        {label:'v2.4.0 — The Colour of a Moment',href:'changelogs/chrome-changelogs/240Chrome-XxetxaRl'},
         {label:'v2.4.1 — The Stroke of a Word',href:'changelogs/chrome-changelogs/241Chrome-Wqc6WhuR'}
       ]},
       {label:'Edge',tc:'t-edge',items:[
